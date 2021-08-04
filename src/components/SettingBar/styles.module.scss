@@ -1,0 +1,13 @@
+@import '../../styles/variables.scss';
+
+.settingBar {
+  position: absolute;
+  top: $toolbar-height;
+  height: $toolbar-height;
+  background: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 1px 5px gray;
+  padding: 0px 130px;
+}

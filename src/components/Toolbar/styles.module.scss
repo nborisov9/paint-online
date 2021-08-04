@@ -1,0 +1,46 @@
+@import '../../styles/variables.scss';
+
+.toolbar {
+  position: absolute;
+  z-index: 1;
+  height: $toolbar-height;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-shadow: 0 1px 5px gray;
+  padding: 0px 130px;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+
+  & div {
+    &:first-child {
+      margin: 0;
+    }
+
+    cursor: pointer;
+    margin: 0px 0px 0px 16px;
+  }
+}
+
+.colorInput {
+  margin: 0px 0px 0px 16px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+
+  & div {
+    &:last-child {
+      margin: 0;
+    }
+
+    cursor: pointer;
+    margin: 0px 16px 0px 0px;
+  }
+}

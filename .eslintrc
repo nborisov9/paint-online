@@ -1,0 +1,30 @@
+{
+  "extends": ["react-app", "prettier", "plugin:react/recommended", "plugin:prettier/recommended"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-alert": "warn",
+    "no-console": "warn",
+    "no-return-await": "error",
+    "no-useless-return": "error",
+    "no-bitwise": "warn",
+    "no-lonely-if": "warn",
+    "no-unused-vars": "warn",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  },
+  "plugins": ["prettier", "react", "react-hooks"],
+  "overrides": [
+    {
+      "files": ["**/*.jsx"],
+      "rules": {
+        "react/prop-types": "off",
+        "react/display-name": "off"
+      }
+    }
+  ]
+}
