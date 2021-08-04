@@ -7,6 +7,9 @@ import toolState from '../../store/toolState';
 
 import Brush from '../../tools/Brush';
 import Rect from '../../tools/Rect';
+import Circle from '../../tools/Circle';
+import Earser from '../../tools/Earser';
+import Line from '../../tools/Line';
 
 import brushSVG from '../../assets/img/brush.svg';
 import reactSVG from '../../assets/img/square.svg';
@@ -20,20 +23,26 @@ import saveSVG from '../../assets/img/save.svg';
 import classes from './styles.module.scss';
 
 export const Toolbar = () => {
-  console.log(toolState.tool);
-
   const initialBrush = () => toolState.setTool(new Brush(canvasState.canvas));
   const initialRect = () => toolState.setTool(new Rect(canvasState.canvas));
+  const initCircle = () => toolState.setTool(new Circle(canvasState.canvas));
+  const itnitErarser = () => toolState.setTool(new Earser(canvasState.canvas));
+  const itnitLine = () => toolState.setTool(new Line(canvasState.canvas));
+
+  const changeColor = e => {
+    toolState.setStrokeColor(e.target.value);
+    toolState.setFillColor(e.target.value);
+  };
 
   return (
     <div className={classes.toolbar}>
       <div className={classes.tools}>
         <ReactSVG src={brushSVG} onClick={initialBrush} />
         <ReactSVG src={reactSVG} onClick={initialRect} />
-        <ReactSVG src={circleSVG} />
-        <ReactSVG src={eraserSVG} />
-        <ReactSVG src={lineSVG} />
-        <input type="color" className={classes.colorInput} />
+        <ReactSVG src={circleSVG} onClick={initCircle} />
+        <ReactSVG src={eraserSVG} onClick={itnitErarser} />
+        <ReactSVG src={lineSVG} onClick={itnitLine} />
+        <input type="color" className={classes.colorInput} onChange={changeColor} />
       </div>
       <div className={classes.actions}>
         <ReactSVG src={undoSVG} />
